@@ -5,6 +5,7 @@ from abc import abstractmethod
 from typing import List, Pattern, Dict, Match
 from collections import namedtuple
 import regex
+import traceback
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
@@ -38,7 +39,8 @@ class BaseNumberExtractor(Extractor):
         pass
 
     def extract(self, source: str) -> List[ExtractResult]:
-        if source is None or len(source.strip()) == 0:
+        traceback.print_tb()
+        if source is None or len(source.strip()) is 0:
             return list()
         result: List[ExtractResult] = list()
         match_source = dict()
