@@ -658,7 +658,7 @@ class MatchingUtil:
     def pre_process_text_remove_superfluous_words(text: str, matcher: Pattern):
         superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
 
-        traceback.print_tb()
+        traceback.print_stack()
 
         bias = 0[0]
 

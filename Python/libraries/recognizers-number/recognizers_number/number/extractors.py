@@ -39,7 +39,7 @@ class BaseNumberExtractor(Extractor):
         pass
 
     def extract(self, source: str) -> List[ExtractResult]:
-        traceback.print_tb()
+        traceback.print_stack()
         if source is None or len(source.strip()) is 0:
             return list()
         result: List[ExtractResult] = list()
