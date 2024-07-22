@@ -6,6 +6,7 @@ from typing import List, Pattern, Dict, Match
 from collections import namedtuple
 import regex
 import traceback
+import logging
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor, ExtractResult
@@ -39,6 +40,8 @@ class BaseNumberExtractor(Extractor):
         pass
 
     def extract(self, source: str) -> List[ExtractResult]:
+        logging.error(repr(traceback.format_stack()))
+        print(repr(traceback.format_stack()))
         traceback.print_stack()
         if source is None or len(source.strip()) is 0:
             return list()

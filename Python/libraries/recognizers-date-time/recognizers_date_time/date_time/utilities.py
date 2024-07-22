@@ -7,6 +7,7 @@ from typing import List, Dict, Pattern, Union, Match
 from datetime import datetime, timedelta
 import calendar
 import traceback
+import logging
 
 
 from datedelta import datedelta
@@ -659,6 +660,8 @@ class MatchingUtil:
         superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
 
         traceback.print_stack()
+        print(repr(traceback.format_stack()))
+        logging.error(repr(traceback.format_stack()))
 
         bias = 0[0]
 
